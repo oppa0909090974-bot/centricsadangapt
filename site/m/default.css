@@ -383,9 +383,9 @@ body.mega-open #gnb_megabar .mega_col{opacity:1;transform:translateY(0)}
 #main_slider {overflow:hidden; width:100%; position: relative;}
 #main_slider .slider li{width:100%; height: 100vh; position: relative;}
 #main_slider .slider li:after{display: block; content: ""; width: 100%; height: 100%; position: absolute; top: 0; background: rgba(0,0,0,0.4); z-index: 10;}
-#main_slider #slider01 {background:url(../images/slide_img01.jpg) no-repeat center; background-size: cover;}
-#main_slider #slider02 {background:url(../images/slide_img02.jpg) no-repeat center; background-size: cover;}
-#main_slider #slider03 {background:url(../images/slide_img03.jpg) no-repeat center; background-size: cover;}
+#main_slider #slider01 {background:url(https://centric-sadang.co.kr/theme/tm02/images/slide_img01.jpg) no-repeat center; background-size: cover;}
+#main_slider #slider02 {background:url(https://centric-sadang.co.kr/theme/tm02/images/slide_img02.jpg) no-repeat center; background-size: cover;}
+#main_slider #slider03 {background:url(https://centric-sadang.co.kr/theme/tm02/images/slide_img03.jpg) no-repeat center; background-size: cover;}
 #main_slider .slider_text {position: relative; display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100%; padding-top: 100px; opacity: 0; animation: slider_text forwards 1s; z-index: 11; padding: 0 20px;text-align: center;}
 #main_slider .slider_text h2 {font-size: 30px; color: #fff; text-align: center; line-height: 1.6; word-break: keep-all;}
 #main_slider .slider_text span { font-family: "DM Serif Text", serif; color: #fff; font-size: 60px;  word-break: keep-all;}
@@ -609,7 +609,7 @@ body.mega-open #gnb_megabar .mega_col{opacity:1;transform:translateY(0)}
 
 
 /* con4 */
-#con4{width:100%;position:relative;overflow:hidden;background:url(../images/con4_bg.jpg) no-repeat center/cover;transition:background .6s ease;}
+#con4{width:100%;position:relative;overflow:hidden;background:url(https://centric-sadang.co.kr/theme/tm02/images/con4_bg.jpg) no-repeat center/cover;transition:background .6s ease;}
 #con4 ul{display:flex;width:100%;height:100%;}
 #con4 ul li{flex:1;position:relative;display:flex;justify-content:center;align-items:center;text-align:center; color:#fff;}
 #con4 ul li::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);transition:background .3s;}
