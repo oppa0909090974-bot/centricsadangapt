@@ -48,6 +48,30 @@ var g5_shop_url = "G5_SHOP_URL";
 <script src="m/placeholders.min.js"></script>
 <script src="m/fullpage.min.js"></script>
 <style>#con5 .txt-wrap{width:100%!important;max-width:900px;margin:0 auto!important;float:none!important}#con5 .inner{justify-content:center!important;align-items:center!important;display:flex!important;min-height:100vh;padding-top:100px;box-sizing:border-box}#con5 .txt-wrap{text-align:center}#con5 .site-info{text-align:left}</style>
+<style>
+.call-fab{display:none}
+@media (max-width:1024px){.call-fab{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9999;height:56px;align-items:center;justify-content:center;gap:8px;background:#142b55;color:#fff!important;font-size:19px;font-weight:800;text-decoration:none;box-shadow:0 -2px 10px rgba(0,0,0,.2)} body{padding-bottom:56px}}
+</style>
+<style>
+#hd .top-call2 a{background:#142b55!important;color:#fff!important;font-size:26px!important;padding:12px 26px!important;box-shadow:0 4px 14px rgba(20,43,85,.35);animation:telpulse 2s infinite}
+#hd .top-call2 i{color:#ffd56a!important}
+#hd .top-call2 a:before{content:"분양문의 ";font-size:16px;font-weight:600;color:#ffd56a;margin-right:4px}
+#hd .top-call2{width:auto!important;flex-shrink:0;margin-right:20px}#hd .top-call2 a{white-space:nowrap}@media(max-width:1500px){#hd .top-call2 a{font-size:20px!important;padding:10px 18px!important}#hd .top-call2 a:before{font-size:13px}}
+@keyframes telpulse{0%,100%{box-shadow:0 0 0 0 rgba(20,43,85,.45)}50%{box-shadow:0 0 0 10px rgba(20,43,85,0)}}
+.hero-tel{display:inline-flex;align-items:center;gap:12px;margin-top:28px;padding:16px 40px;border-radius:50px;background:#ffd56a;color:#142b55!important;font-size:38px;font-weight:900;letter-spacing:1px;text-decoration:none;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.hero-tel small{font-size:20px;font-weight:700}
+@media (max-width:1024px){.hero-tel{font-size:26px;padding:12px 26px;margin-top:18px}.hero-tel small{font-size:15px}}
+</style>
+<style>
+.pop-slides{position:relative;aspect-ratio:2/1;background:#0b1630}
+.pop-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s}
+.pop-slides img.on,.pop-slides a.on img{opacity:1}
+.pop-slides a{position:absolute;inset:0;display:block;pointer-events:none}
+.pop-slides a.on{pointer-events:auto}
+.pop-dots{position:absolute;left:0;right:0;bottom:52px;display:flex;justify-content:center;gap:8px;z-index:2}
+.pop-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
+.pop-dots button.on{background:#ffd56a;width:26px;border-radius:5px}
+</style>
 </head>
 <body data-aos-easing="ease-out" data-aos-duration="800" data-aos-delay="0" class="fp-scrollable fp-viewing-10" style="height: initial; position: relative; overflow: visible;">
 
@@ -98,7 +122,8 @@ var g5_shop_url = "G5_SHOP_URL";
 
     <div id="hd_pops_2" class="hd_pops" style="display: none;">
         <div class="hd_pops_con">
-            <p><img src="m/9d0afccc0fbcab6af3277a0bd93b9ae1_1782891740_057.jpg" title="9d0afccc0fbcab6af3277a0bd93b9ae1_1782891740_057.jpg" alt="9d0afccc0fbcab6af3277a0bd93b9ae1_1782891740_057.jpg"><br style="clear:both;">&nbsp;</p>        </div>
+            <div class="pop-slides"><img class="on" src="m/9d0afccc0fbcab6af3277a0bd93b9ae1_1782891740_057.jpg" alt="대한민국 지주택의 새로운 기준"><a href="e1.html"><img src="m/gift_banner.jpg" alt="방문 상담 고객 전원 사은품 증정"></a></div>
+            <div class="pop-dots"><button class="on" data-i="0"></button><button data-i="1"></button></div>        </div>
         <div class="hd_pops_footer">
             <button class="hd_pops_reject hd_pops_2 24"><strong>24</strong>시간 동안 다시 열람하지 않습니다.</button>
             <button class="hd_pops_close hd_pops_2">닫기 <i class="fa fa-times" aria-hidden="true"></i></button>
@@ -120,6 +145,12 @@ $(function() {
     });
     $("#hd").css("z-index", 1000);
 });
+</script>
+<script>
+$(function(){var i=0,items=$('.pop-slides > *'),dots=$('.pop-dots button');
+function go(n){i=n;items.removeClass('on');items.find('img').removeClass('on');var el=items.eq(n);el.addClass('on');if(el.is('img'))el.addClass('on');dots.removeClass('on').eq(n).addClass('on');}
+var tm=setInterval(function(){go((i+1)%items.length)},4000);
+dots.on('click',function(){clearInterval(tm);go(+$(this).data('i'));tm=setInterval(function(){go((i+1)%items.length)},4000);});});
 </script>
 <!-- } 팝업레이어 끝 -->
     <!-- 이동식팝업 -->
@@ -196,7 +227,7 @@ $(function() {
                 </div>
             </nav>
 
-            <!-- <div class="top-call2"><a href="tel:1844-2411"><i class="fa-solid fa-phone"></i>1844-2411</a></div> -->
+            <div class="top-call2"><a href="tel:1844-2411"><i class="fa fa-phone"></i>1844-2411</a></div>
 
 
             <nav id="gnb_mobile">
@@ -246,7 +277,7 @@ $(function() {
                         <a href="index.html" class="on">KOR</a>
                         <a href="index.html" class="">ENG</a>
                     </div>
-                    <!-- <div class="m_top-call2"><a href="tel:1844-2411"><i class="fa-solid fa-phone"></i>1844-2411</a></div> -->
+                    <div class="m_top-call2"><a href="tel:1844-2411"><i class="fa fa-phone"></i>1844-2411</a></div>
                 </div>
             </nav>
         </div>
@@ -338,12 +369,14 @@ $(window).on('scroll', function () {
 				<div class="slider_text">
 					<h2>강남은 가깝게, 자연은 더 가깝게, 삶은 완벽하게</h2>
 					<span>TRANSPORT EDUCATION NATURE CENTRIC</span>
+					<a class="hero-tel" href="tel:1844-2411"><small>분양문의</small> 1844-2411</a>
 				</div>
 			</li>
 			<li id="slider02" aria-hidden="true" style="float: none; list-style: none; position: absolute; width: 1905px; z-index: 0; display: none;">
 				<div class="slider_text">
 					<h2>강남은 가깝게, 자연은 더 가깝게, 삶은 완벽하게</h2>
 					<span>TRANSPORT EDUCATION NATURE CENTRIC</span>
+					<a class="hero-tel" href="tel:1844-2411"><small>분양문의</small> 1844-2411</a>
 				</div>
 			</li>
 		</ul></div><div class="bx-controls bx-has-controls-direction bx-has-pager"><div class="bx-controls-direction"><a class="bx-prev" href="index.html">Prev</a><a class="bx-next" href="index.html">Next</a></div><div class="bx-pager bx-default-pager"><div class="bx-pager-item"><a href="index.html" data-slide-index="0" class="bx-pager-link active">1</a></div><div class="bx-pager-item"><a href="index.html" data-slide-index="1" class="bx-pager-link">2</a></div></div></div></div>
@@ -902,4 +935,5 @@ $(function() {
 
 
 
-<div id="fp-nav" class="fp-right"><ul><li><a href="index.html#" class=""><span class="fp-sr-only">Section%201</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%202</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%203</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%204</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%205</span><span></span></a></li><li><a href="index.html#" class="active"><span class="fp-sr-only">Section%206</span><span></span></a></li><li><a href="index.html#"><span class="fp-sr-only">Section%207</span><span></span></a></li></ul></div><div id="gnb_megabar"><div class="mega_inner"><div class="mega_col"><ul><li><a href="a1.html" target="_self" class="gnb_2da">사업개요</a></li><li><a href="a2.html" target="_self" class="gnb_2da">오시는길</a></li></ul></div><div class="mega_col"><ul><li><a href="d1.html" target="_self" class="gnb_2da">입지환경</a></li><li><a href="premium.html" target="_self" class="gnb_2da">프리미엄</a></li><li><a href="https://www.youtube.com/watch?v=aFGolGGXDt8" target="_blank" class="gnb_2da">사업부지 VR</a></li></ul></div><div class="mega_col"><ul><li><a href="c1.html" target="_self" class="gnb_2da">단지배치도</a></li><li><a href="c2.html" target="_self" class="gnb_2da">동호배치도</a></li><li><a href="c3.html" target="_self" class="gnb_2da">커뮤니티</a></li></ul></div><div class="mega_col"><ul><li><a href="b1.html" target="_self" class="gnb_2da">59㎡</a></li><li><a href="b2.html" target="_self" class="gnb_2da">84㎡</a></li></ul></div><div class="mega_col"><ul><li><a href="e1.html" target="_self" class="gnb_2da">관심고객등록</a></li></ul></div></div></div><div id="extension-mmplj"></div></body></html>
+<div id="fp-nav" class="fp-right"><ul><li><a href="index.html#" class=""><span class="fp-sr-only">Section%201</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%202</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%203</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%204</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%205</span><span></span></a></li><li><a href="index.html#" class="active"><span class="fp-sr-only">Section%206</span><span></span></a></li><li><a href="index.html#"><span class="fp-sr-only">Section%207</span><span></span></a></li></ul></div><div id="gnb_megabar"><div class="mega_inner"><div class="mega_col"><ul><li><a href="a1.html" target="_self" class="gnb_2da">사업개요</a></li><li><a href="a2.html" target="_self" class="gnb_2da">오시는길</a></li></ul></div><div class="mega_col"><ul><li><a href="d1.html" target="_self" class="gnb_2da">입지환경</a></li><li><a href="premium.html" target="_self" class="gnb_2da">프리미엄</a></li><li><a href="https://www.youtube.com/watch?v=aFGolGGXDt8" target="_blank" class="gnb_2da">사업부지 VR</a></li></ul></div><div class="mega_col"><ul><li><a href="c1.html" target="_self" class="gnb_2da">단지배치도</a></li><li><a href="c2.html" target="_self" class="gnb_2da">동호배치도</a></li><li><a href="c3.html" target="_self" class="gnb_2da">커뮤니티</a></li></ul></div><div class="mega_col"><ul><li><a href="b1.html" target="_self" class="gnb_2da">59㎡</a></li><li><a href="b2.html" target="_self" class="gnb_2da">84㎡</a></li></ul></div><div class="mega_col"><ul><li><a href="e1.html" target="_self" class="gnb_2da">관심고객등록</a></li></ul></div></div></div><div id="extension-mmplj"></div><a class="call-fab" href="tel:1844-2411"><i class="fa fa-phone"></i> 상담문의 1844-2411</a>
+</body></html>
