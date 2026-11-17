@@ -10,7 +10,7 @@ exports.handler = async (event) => {
       console.log('SMS env vars missing');
       return { statusCode: 200, body: 'skip' };
     }
-    const text = `[센트릭사당 관심고객]\n이름: ${d['이름'] || '-'}\n연락처: ${d['연락처'] || '-'}\n평형: ${d['관심평형'] || '-'}\n타분양안내: ${d['마케팅수신동의'] ? '동의' : '미동의'}`;
+    const text = `[센트릭사당]\n이름: ${d['이름'] || '-'}\n연락처: ${d['연락처'] || '-'}\n평형: ${d['관심평형'] || '-'}\n타분양: ${d['마케팅수신동의'] ? '동의' : '미동의'}`;
     const date = new Date().toISOString();
     const salt = crypto.randomBytes(16).toString('hex');
     const signature = crypto.createHmac('sha256', SOLAPI_API_SECRET).update(date + salt).digest('hex');
