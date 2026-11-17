@@ -557,7 +557,7 @@ function display_submenu2(num) { document.getElementById("sub_m"+num).style.disp
 #e1 label:first-child{margin-top:0}
 #e1 input[type=text],#e1 input[type=tel],#e1 select{width:100%;height:50px;border:1px solid #cfd5dd;border-radius:8px;padding:0 14px;font-size:16px;background:#fff;box-sizing:border-box}
 #e1 .agree{margin-top:22px;font-size:14px;color:#555;line-height:1.6}
-#e1 .agree .box{background:#fff;border:1px solid #e3e6eb;border-radius:8px;padding:12px 14px;max-height:110px;overflow:auto;margin-bottom:10px}
+#e1 .agree .box{background:#fff;border:1px solid #e3e6eb;border-radius:8px;padding:12px 14px;max-height:150px;overflow:auto;margin-bottom:10px}
 #e1 .agree input{margin-right:6px;vertical-align:middle}
 #e1 button[type=submit]{display:block;width:100%;height:58px;margin-top:24px;border:0;border-radius:8px;background:#1d4073;color:#fff;font-size:18px;font-weight:700;cursor:pointer}
 #e1 .tel{display:block;text-align:center;margin-top:24px;font-size:17px;color:#333}
@@ -578,8 +578,9 @@ function display_submenu2(num) { document.getElementById("sub_m"+num).style.disp
 <option value="미정">아직 정하지 않음</option>
 </select>
 <div class="agree">
-<div class="box">수집 항목: 이름, 연락처, 관심 평형<br>수집 목적: 분양 정보 안내 및 상담<br>보유 기간: 분양 완료 시까지 (요청 시 즉시 파기)<br>동의를 거부할 수 있으나, 거부 시 관심고객 등록이 제한됩니다.</div>
-<label style="display:inline;font-weight:400;margin:0"><input type="checkbox" name="개인정보동의" value="동의" required>개인정보 수집 및 이용에 동의합니다.</label>
+<div class="box">[필수] 개인정보 수집·이용<br>수집 항목: 이름, 연락처, 관심 평형<br>수집 목적: 센트릭 사당 분양 정보 안내 및 상담<br>보유 기간: <b>수집일로부터 2년</b> (요청 시 즉시 파기)<br>동의를 거부할 수 있으나, 거부 시 관심고객 등록이 제한됩니다.<br><br>[선택] 마케팅 정보 수신<br>수집 항목: 이름, 연락처<br>이용 목적: 서울 지역 내 다른 아파트·오피스텔 분양 정보 전화·문자 안내<br>보유 기간: 수집일로부터 2년 (수신 거부 시 즉시 중단)<br>동의하지 않아도 관심고객 등록이 가능합니다.</div>
+<label style="display:block;font-weight:400;margin:0 0 6px"><input type="checkbox" name="개인정보동의" value="동의" required>[필수] 개인정보 수집 및 이용(보유기간 2년)에 동의합니다.</label>
+<label style="display:block;font-weight:400;margin:0"><input type="checkbox" name="마케팅수신동의" value="동의">[선택] 서울 지역 내 다른 아파트·오피스텔 분양 시 전화·문자 안내 수신에 동의합니다.</label>
 </div>
 <button type="submit">관심고객 등록하기</button>
 </form>
