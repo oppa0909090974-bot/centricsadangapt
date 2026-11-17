@@ -19,7 +19,7 @@
 
 <title>센트릭 사당 | 센트릭 사당</title>
 <link rel="stylesheet" href="m/default2.css">
-<link rel="stylesheet" href="m/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="m/table.css">
 <link href="m/fullpage.css" rel="stylesheet">
 
@@ -71,6 +71,20 @@ var g5_shop_url = "G5_SHOP_URL";
 .pop-dots{position:absolute;left:0;right:0;bottom:52px;display:flex;justify-content:center;gap:8px;z-index:2}
 .pop-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
 .pop-dots button.on{background:#ffd56a;width:26px;border-radius:5px}
+</style>
+<style>
+#hd .top-call2{width:auto!important;flex-shrink:0;margin-right:24px}
+#hd .top-call2 a{display:flex!important;align-items:center;gap:12px;background:#fff!important;color:#142b55!important;border:2px solid #d6b25e;border-radius:40px!important;padding:6px 22px 6px 6px!important;font-size:24px!important;font-weight:900!important;letter-spacing:.5px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.18)!important;animation:none!important;line-height:1.1}
+#hd .top-call2 a:before{content:none!important}
+#hd .top-call2 a .tc-ic{width:44px;height:44px;border-radius:50%;background:#142b55;color:#ffd56a;display:flex;align-items:center;justify-content:center;position:relative}
+#hd .top-call2 a .tc-ic:after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(214,178,94,.7);animation:ring 1.8s infinite}
+#hd .top-call2 a .tc-ic svg{width:22px;height:22px}
+#hd .top-call2 a .tc-tx{display:flex;flex-direction:column}
+#hd .top-call2 a .tc-tx small{font-size:12px;font-weight:700;color:#b08a3a;letter-spacing:1px}
+#hd .top-call2 a:hover{background:#142b55!important;color:#fff!important}
+@keyframes ring{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.35);opacity:0}}
+@media(max-width:1500px){#hd .top-call2 a{font-size:20px!important}#hd .top-call2 a .tc-ic{width:38px;height:38px}}
+.ico-ph{width:1.1em;height:1.1em;vertical-align:-.15em}
 </style>
 </head>
 <body data-aos-easing="ease-out" data-aos-duration="800" data-aos-delay="0" class="fp-scrollable fp-viewing-10" style="height: initial; position: relative; overflow: visible;">
@@ -227,7 +241,7 @@ dots.on('click',function(){clearInterval(tm);go(+$(this).data('i'));tm=setInterv
                 </div>
             </nav>
 
-            <div class="top-call2"><a href="tel:1844-2411"><i class="fa fa-phone"></i>1844-2411</a></div>
+            <div class="top-call2"><a href="tel:1844-2411"><span class="tc-ic"><svg class="ico-ph" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span><span class="tc-tx"><small>분양문의</small>1844-2411</span></a></div>
 
 
             <nav id="gnb_mobile">
@@ -277,7 +291,7 @@ dots.on('click',function(){clearInterval(tm);go(+$(this).data('i'));tm=setInterv
                         <a href="index.html" class="on">KOR</a>
                         <a href="index.html" class="">ENG</a>
                     </div>
-                    <div class="m_top-call2"><a href="tel:1844-2411"><i class="fa fa-phone"></i>1844-2411</a></div>
+                    <div class="m_top-call2"><a href="tel:1844-2411"><svg class="ico-ph" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>1844-2411</a></div>
                 </div>
             </nav>
         </div>
@@ -935,5 +949,5 @@ $(function() {
 
 
 
-<div id="fp-nav" class="fp-right"><ul><li><a href="index.html#" class=""><span class="fp-sr-only">Section%201</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%202</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%203</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%204</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%205</span><span></span></a></li><li><a href="index.html#" class="active"><span class="fp-sr-only">Section%206</span><span></span></a></li><li><a href="index.html#"><span class="fp-sr-only">Section%207</span><span></span></a></li></ul></div><div id="gnb_megabar"><div class="mega_inner"><div class="mega_col"><ul><li><a href="a1.html" target="_self" class="gnb_2da">사업개요</a></li><li><a href="a2.html" target="_self" class="gnb_2da">오시는길</a></li></ul></div><div class="mega_col"><ul><li><a href="d1.html" target="_self" class="gnb_2da">입지환경</a></li><li><a href="premium.html" target="_self" class="gnb_2da">프리미엄</a></li><li><a href="https://www.youtube.com/watch?v=aFGolGGXDt8" target="_blank" class="gnb_2da">사업부지 VR</a></li></ul></div><div class="mega_col"><ul><li><a href="c1.html" target="_self" class="gnb_2da">단지배치도</a></li><li><a href="c2.html" target="_self" class="gnb_2da">동호배치도</a></li><li><a href="c3.html" target="_self" class="gnb_2da">커뮤니티</a></li></ul></div><div class="mega_col"><ul><li><a href="b1.html" target="_self" class="gnb_2da">59㎡</a></li><li><a href="b2.html" target="_self" class="gnb_2da">84㎡</a></li></ul></div><div class="mega_col"><ul><li><a href="e1.html" target="_self" class="gnb_2da">관심고객등록</a></li></ul></div></div></div><div id="extension-mmplj"></div><div class="call-fab"><a class="cf-tel" href="tel:1844-2411"><i class="fa fa-phone"></i> 전화연결</a><a class="cf-sms" href="e1.html"><i class="fa fa-commenting"></i> 문자예약</a></div>
+<div id="fp-nav" class="fp-right"><ul><li><a href="index.html#" class=""><span class="fp-sr-only">Section%201</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%202</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%203</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%204</span><span></span></a></li><li><a href="index.html#" class=""><span class="fp-sr-only">Section%205</span><span></span></a></li><li><a href="index.html#" class="active"><span class="fp-sr-only">Section%206</span><span></span></a></li><li><a href="index.html#"><span class="fp-sr-only">Section%207</span><span></span></a></li></ul></div><div id="gnb_megabar"><div class="mega_inner"><div class="mega_col"><ul><li><a href="a1.html" target="_self" class="gnb_2da">사업개요</a></li><li><a href="a2.html" target="_self" class="gnb_2da">오시는길</a></li></ul></div><div class="mega_col"><ul><li><a href="d1.html" target="_self" class="gnb_2da">입지환경</a></li><li><a href="premium.html" target="_self" class="gnb_2da">프리미엄</a></li><li><a href="https://www.youtube.com/watch?v=aFGolGGXDt8" target="_blank" class="gnb_2da">사업부지 VR</a></li></ul></div><div class="mega_col"><ul><li><a href="c1.html" target="_self" class="gnb_2da">단지배치도</a></li><li><a href="c2.html" target="_self" class="gnb_2da">동호배치도</a></li><li><a href="c3.html" target="_self" class="gnb_2da">커뮤니티</a></li></ul></div><div class="mega_col"><ul><li><a href="b1.html" target="_self" class="gnb_2da">59㎡</a></li><li><a href="b2.html" target="_self" class="gnb_2da">84㎡</a></li></ul></div><div class="mega_col"><ul><li><a href="e1.html" target="_self" class="gnb_2da">관심고객등록</a></li></ul></div></div></div><div id="extension-mmplj"></div><div class="call-fab"><a class="cf-tel" href="tel:1844-2411"><svg class="ico-ph" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg> 전화연결</a><a class="cf-sms" href="e1.html"><svg class="ico-ph" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2zm3 6h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg> 문자예약</a></div>
 </body></html>
