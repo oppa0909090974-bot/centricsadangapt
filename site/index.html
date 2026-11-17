@@ -7,11 +7,13 @@
 
 <meta name="description" content="교통 프리미엄 | 교육 프리미엄 | 생활편의 프리미엄 | 미래가치 프리미엄">
 <meta property="og:type" content="website">
-<meta property="og:title" content="센트릭 사당">
+<meta property="og:title" content="센트릭 사당 | 분양문의 1844-2411">
 <meta property="og:site_name" content="센트릭 사당">
-<meta property="og:description" content="교통 프리미엄 | 교육 프리미엄 | 생활편의 프리미엄 | 미래가치 프리미엄">
-<meta property="og:image" content="http://centric-sadang.co.kr/myimage.jpg">
-<meta property="og:url" content="http://centric-sadang.co.kr/">
+<meta property="og:description" content="7호선 남성역 도보 3분 · 총 502세대 59㎡/84㎡ · 관심고객 등록 시 사은품 증정">
+<meta property="og:image" content="https://centricsadangapt.com/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://centricsadangapt.com/">
 <link rel="canonical" href="http://centric-sadang.co.kr/">
 <link rel="SHORTCUT ICON" href="http://centric-sadang.co.kr/favicon.ico">
 
@@ -62,16 +64,7 @@ var g5_shop_url = "G5_SHOP_URL";
 .hero-tel small{font-size:20px;font-weight:700}
 @media (max-width:1024px){.hero-tel{font-size:26px;padding:12px 26px;margin-top:18px}.hero-tel small{font-size:15px}}
 </style>
-<style>
-.pop-slides{position:relative;aspect-ratio:2/1;background:#0b1630}
-.pop-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .6s}
-.pop-slides img.on,.pop-slides a.on img{opacity:1}
-.pop-slides a{position:absolute;inset:0;display:block;pointer-events:none}
-.pop-slides a.on{pointer-events:auto}
-.pop-dots{position:absolute;left:0;right:0;bottom:52px;display:flex;justify-content:center;gap:8px;z-index:2}
-.pop-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
-.pop-dots button.on{background:#ffd56a;width:26px;border-radius:5px}
-</style>
+<style>.pop-gift,.pop-gift img{display:block;width:100%;height:auto}@media(max-width:768px){#hd_pops_2{width:min(420px,92vw)!important}}</style>
 <style>
 #hd .top-call2{width:auto!important;flex-shrink:0;margin-right:24px}
 #hd .top-call2 a{display:flex!important;align-items:center;gap:12px;background:#fff!important;color:#142b55!important;border:2px solid #d6b25e;border-radius:40px!important;padding:6px 22px 6px 6px!important;font-size:24px!important;font-weight:900!important;letter-spacing:.5px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.18)!important;animation:none!important;line-height:1.1}
@@ -136,8 +129,7 @@ var g5_shop_url = "G5_SHOP_URL";
 
     <div id="hd_pops_2" class="hd_pops" style="display: none;">
         <div class="hd_pops_con">
-            <div class="pop-slides"><img class="on" src="m/9d0afccc0fbcab6af3277a0bd93b9ae1_1782891740_057.jpg" alt="대한민국 지주택의 새로운 기준"><a href="e1.html"><img src="m/gift_banner.jpg" alt="방문 상담 고객 전원 사은품 증정"></a></div>
-            <div class="pop-dots"><button class="on" data-i="0"></button><button data-i="1"></button></div>        </div>
+            <a href="e1.html" class="pop-gift"><picture><source media="(max-width:768px)" srcset="m/gift_banner_m.jpg"><img src="m/gift_banner.jpg" alt="방문 상담 고객 전원 사은품 증정 · 분양문의 1844-2411"></picture></a>        </div>
         <div class="hd_pops_footer">
             <button class="hd_pops_reject hd_pops_2 24"><strong>24</strong>시간 동안 다시 열람하지 않습니다.</button>
             <button class="hd_pops_close hd_pops_2">닫기 <i class="fa fa-times" aria-hidden="true"></i></button>
@@ -159,12 +151,6 @@ $(function() {
     });
     $("#hd").css("z-index", 1000);
 });
-</script>
-<script>
-$(function(){var i=0,items=$('.pop-slides > *'),dots=$('.pop-dots button');
-function go(n){i=n;items.removeClass('on');items.find('img').removeClass('on');var el=items.eq(n);el.addClass('on');if(el.is('img'))el.addClass('on');dots.removeClass('on').eq(n).addClass('on');}
-var tm=setInterval(function(){go((i+1)%items.length)},4000);
-dots.on('click',function(){clearInterval(tm);go(+$(this).data('i'));tm=setInterval(function(){go((i+1)%items.length)},4000);});});
 </script>
 <!-- } 팝업레이어 끝 -->
     <!-- 이동식팝업 -->
