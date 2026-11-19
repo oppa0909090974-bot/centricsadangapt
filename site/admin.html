@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>관리자 | 센트릭 사당 방문 통계</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{--bk:#111827;--g1:#f3f4f6;--g2:#e5e7eb;--g3:#9ca3af;--g4:#4b5563;--a:#2563eb;--k:#0d9488}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;background:var(--g1);color:var(--bk);line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;gap:12px;flex-wrap:wrap}
+header h1{font-size:22px;font-weight:800}
+header .r{display:flex;gap:8px;align-items:center}
+select,button{font:inherit;font-size:14px;border:1px solid var(--g2);background:#fff;border-radius:8px;padding:8px 12px;cursor:pointer}
+button.p{background:var(--bk);color:#fff;border-color:var(--bk);font-weight:700}
+#login{max-width:380px;margin:14vh auto;background:#fff;border-radius:14px;padding:34px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+#login h2{font-size:20px;margin-bottom:6px}
+#login p{color:var(--g4);font-size:14px;margin-bottom:20px}
+#login input{width:100%;font:inherit;padding:13px 14px;border:1px solid var(--g2);border-radius:8px;margin-bottom:12px}
+#login button{width:100%;padding:13px}
+#err{color:#dc2626;font-size:14px;margin-top:10px;min-height:20px}
+.sites{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:#fff;border-radius:14px;padding:22px}
+.card h2{font-size:17px;display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.card h2 i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.card h2 small{color:var(--g3);font-weight:500;font-size:13px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.kpi div{background:var(--g1);border-radius:10px;padding:12px}
+.kpi span{display:block;font-size:12.5px;color:var(--g4)}
+.kpi b{font-size:24px;font-weight:800}
+.kpi em{font-style:normal;font-size:12px;color:var(--g3);display:block}
+.chart{display:flex;align-items:flex-end;gap:3px;height:150px;border-bottom:1px solid var(--g2);padding-top:10px}
+.chart .c{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+.chart .c .b{width:100%;border-radius:3px 3px 0 0;min-height:1px}
+.chart .c:hover .tip{display:block}
+.tip{display:none;position:absolute;bottom:100%;background:var(--bk);color:#fff;font-size:12px;padding:5px 8px;border-radius:6px;white-space:nowrap;z-index:2;margin-bottom:4px}
+.xl{display:flex;justify-content:space-between;color:var(--g3);font-size:11.5px;margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.list h3{font-size:14px;color:var(--g4);margin-bottom:8px}
+.list .row{display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px dashed var(--g2);position:relative}
+.list .row .bar{position:absolute;left:0;bottom:-1px;height:2px;border-radius:2px;opacity:.6}
+.list .row span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:75%}
+.list .empty{color:var(--g3);font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:18px}
+th,td{padding:8px 6px;text-align:right;border-bottom:1px solid var(--g2)}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--g4);font-weight:600;background:var(--g1)}
+.tblwrap{max-height:280px;overflow:auto;margin-top:6px}
+.note{color:var(--g3);font-size:12.5px;margin-top:18px}
+@media(max-width:900px){.sites{grid-template-columns:1fr}.kpi{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<div id="login">
+  <h2>관리자 로그인</h2>
+  <p>센트릭 사당 홈페이지 방문 통계</p>
+  <form id="lf"><input id="pw" type="password" placeholder="관리자 비밀번호" autocomplete="current-password"><button class="p" type="submit">로그인</button></form>
+  <div id="err"></div>
+</div>
+
+<div class="wrap" id="app" hidden>
+  <header>
+    <h1>센트릭 사당 방문 통계</h1>
+    <div class="r">
+      <select id="days"><option value="7">최근 7일</option><option value="30" selected>최근 30일</option><option value="90">최근 90일</option></select>
+      <button id="reload">새로고침</button>
+      <button id="logout">로그아웃</button>
+    </div>
+  </header>
+  <div class="sites" id="sites"></div>
+  <p class="note">· 방문자 = 하루 동안 같은 기기는 1명으로 계산 (날짜는 한국 시간 기준) · 페이지뷰 = 열어 본 페이지 수 · 검색로봇은 제외 · 통계는 2026-11-19 설치 이후부터 집계됩니다.</p>
+</div>
+
+<script>
+var SITES={apt:{name:'centricsadangapt.com',sub:'1844-2411 · GFA',color:'#2563eb'},kr:{name:'centricsadang.kr',sub:'1555-1341',color:'#0d9488'}};
+function key(){try{return sessionStorage.getItem('ak')||''}catch(e){return ''}}
+function setKey(v){try{v?sessionStorage.setItem('ak',v):sessionStorage.removeItem('ak')}catch(e){}}
+function n(x){return (x||0).toLocaleString('ko-KR')}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function sum(rows,f){return rows.reduce(function(a,r){return a+r[f]},0)}
+function merge(rows,f){var o={};rows.forEach(function(r){for(var k in r[f])o[k]=(o[k]||0)+r[f][k]});return Object.entries(o).sort(function(a,b){return b[1]-a[1]})}
+var PAGE={'/':'메인','/index.html':'메인','/a1.html':'사업개요','/a2.html':'오시는길','/b1.html':'입지환경','/b2.html':'단지배치도','/c1.html':'동호배치도','/c2.html':'59㎡','/c3.html':'84㎡','/d1.html':'커뮤니티','/e1.html':'관심고객등록','/premium.html':'프리미엄','/thanks.html':'등록완료'};
+function list(title,arr,color,map){
+  if(!arr.length)return '<div class="list"><h3>'+title+'</h3><div class="empty">아직 데이터 없음</div></div>';
+  var max=arr[0][1];
+  return '<div class="list"><h3>'+title+'</h3>'+arr.slice(0,8).map(function(e){var lab=map&&map[e[0]]?map[e[0]]+' <small style="color:#9ca3af">'+esc(e[0])+'</small>':esc(e[0]);return '<div class="row"><span>'+lab+'</span><b>'+n(e[1])+'</b><i class="bar" style="width:'+(e[1]/max*100)+'%;background:'+color+'"></i></div>'}).join('')+'</div>';
+}
+function render(data){
+  var h='';
+  ['apt','kr'].forEach(function(s){
+    var rows=data.sites[s],cfg=SITES[s],t=rows[rows.length-1],y=rows[rows.length-2]||{uv:0,pv:0};
+    var last7=rows.slice(-7);
+    var max=Math.max.apply(null,rows.map(function(r){return r.uv}).concat([1]));
+    h+='<div class="card"><h2><i style="background:'+cfg.color+'"></i>'+cfg.name+' <small>'+cfg.sub+'</small></h2>';
+    h+='<div class="kpi"><div><span>오늘 방문자</span><b>'+n(t.uv)+'</b><em>페이지뷰 '+n(t.pv)+'</em></div><div><span>어제 방문자</span><b>'+n(y.uv)+'</b><em>페이지뷰 '+n(y.pv)+'</em></div><div><span>최근 7일</span><b>'+n(sum(last7,'uv'))+'</b><em>페이지뷰 '+n(sum(last7,'pv'))+'</em></div><div><span>기간 합계</span><b>'+n(sum(rows,'uv'))+'</b><em>페이지뷰 '+n(sum(rows,'pv'))+'</em></div></div>';
+    h+='<div class="chart">'+rows.map(function(r){return '<div class="c"><div class="tip">'+r.date.slice(5)+' · 방문자 '+n(r.uv)+' / 페이지뷰 '+n(r.pv)+'</div><div class="b" style="height:'+(r.uv/max*100)+'%;background:'+cfg.color+'"></div></div>'}).join('')+'</div>';
+    h+='<div class="xl"><span>'+rows[0].date.slice(5)+'</span><span>일별 방문자</span><span>'+t.date.slice(5)+'</span></div>';
+    h+='<div class="two">'+list('유입 경로',merge(rows,'ref'),cfg.color)+list('기기',merge(rows,'dev'),cfg.color)+'</div>';
+    h+='<div class="two">'+list('많이 본 페이지',merge(rows,'page'),cfg.color,PAGE)+'<div></div></div>';
+    h+='<div class="tblwrap"><table><thead><tr><th>날짜</th><th>방문자</th><th>페이지뷰</th></tr></thead><tbody>'+rows.slice().reverse().map(function(r){return '<tr><td>'+r.date+'</td><td>'+n(r.uv)+'</td><td>'+n(r.pv)+'</td></tr>'}).join('')+'</tbody></table></div>';
+    h+='</div>';
+  });
+  document.getElementById('sites').innerHTML=h;
+}
+function load(){
+  var k=key();if(!k)return;
+  fetch('/api/stats?days='+document.getElementById('days').value,{headers:{'x-admin-key':k},cache:'no-store'})
+  .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})})
+  .then(function(x){
+    if(!x.ok){setKey('');document.getElementById('app').hidden=true;document.getElementById('login').hidden=false;document.getElementById('err').textContent=x.j.error||'오류가 발생했습니다.';return}
+    document.getElementById('login').hidden=true;document.getElementById('app').hidden=false;render(x.j);
+  }).catch(function(){document.getElementById('err').textContent='서버에 연결하지 못했습니다.'});
+}
+document.getElementById('lf').onsubmit=function(e){e.preventDefault();setKey(document.getElementById('pw').value);document.getElementById('err').textContent='';load()};
+document.getElementById('reload').onclick=load;
+document.getElementById('days').onchange=load;
+document.getElementById('logout').onclick=function(){setKey('');location.reload()};
+load();
+</script>
+</body>
+</html>
