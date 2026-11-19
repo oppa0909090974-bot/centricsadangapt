@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>센트릭 사당 | CENTRIC SADANG</title>
+<meta name="description" content="센트릭 사당 — 서울 동작구 사당동 총 502세대, 6개동 최고 29층. 분양문의 1555-1341">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap">
+<style>
+:root{--bk:#0f1115;--wh:#ffffff;--g1:#f3f4f6;--g2:#e5e7eb;--g3:#9ca3af;--g4:#4b5563;--ac:#2f54eb;--ac2:#e9eeff}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Pretendard,-apple-system,"Malgun Gothic",sans-serif;color:var(--bk);background:var(--wh);line-height:1.6;word-break:keep-all}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.num{font-family:Montserrat,Pretendard,sans-serif}
+.box{max-width:1320px;margin:0 auto;padding:0 32px}
+
+/* ===== left rail nav (desktop) ===== */
+.rail{position:fixed;left:0;top:0;bottom:0;width:96px;background:var(--bk);color:#fff;z-index:60;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:26px 0}
+.rail .mark img{width:56px;filter:brightness(0) invert(1)}
+.rail ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.rail li a{display:block;writing-mode:vertical-rl;font-size:13px;letter-spacing:.12em;padding:12px 0;color:#8b93a7;transition:.2s}
+.rail li a.on,.rail li a:hover{color:#fff}
+.rail li a.on{box-shadow:inset -2px 0 0 var(--ac)}
+.rail .tel{writing-mode:vertical-rl;font-weight:700;font-size:15px;letter-spacing:.08em;color:#fff;background:var(--ac);padding:18px 10px;border-radius:30px}
+main{margin-left:96px}
+
+/* mobile top */
+.mtop{display:none}
+
+/* ===== 1. hero : full-bleed site plan with overlay card ===== */
+.hero{position:relative;height:100vh;min-height:680px;overflow:hidden;background:#000}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero .card{position:absolute;right:56px;bottom:56px;background:#fff;width:min(520px,calc(100% - 64px));padding:44px 44px 36px}
+.hero .card small{display:inline-block;background:var(--ac2);color:var(--ac);font-weight:700;font-size:13px;padding:5px 12px;border-radius:4px}
+.hero .card h1{font-size:44px;line-height:1.2;font-weight:800;letter-spacing:-.03em;margin:16px 0 12px}
+.hero .card p{color:var(--g4);font-size:16px}
+.hero .card .row{display:flex;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:54px;padding:0 26px;font-weight:700;font-size:16px;border-radius:6px;transition:.2s}
+.btn.a{background:var(--ac);color:#fff;flex:1}.btn.a:hover{background:#1d3fd1}
+.btn.b{background:var(--g1);color:var(--bk)}.btn.b:hover{background:var(--g2)}
+.hero .title-big{position:absolute;left:56px;top:56px;color:#fff;font-family:Montserrat,sans-serif;font-weight:800;font-size:clamp(56px,9vw,150px);line-height:.9;letter-spacing:-.02em}
+.hero .title-big span{display:block;font-size:.32em;letter-spacing:.5em;font-weight:500;margin-top:14px;opacity:.85}
+
+/* ===== 2. number strip ===== */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--g2)}
+.nums div{padding:48px 32px;border-right:1px solid var(--g2)}
+.nums div:last-child{border-right:0}
+.nums b{font-family:Montserrat,sans-serif;font-size:56px;font-weight:800;line-height:1;letter-spacing:-.02em}
+.nums b em{font-style:normal;font-size:22px;margin-left:4px;color:var(--g4)}
+.nums span{display:block;margin-top:10px;color:var(--g4);font-size:15px}
+
+/* section head */
+.sec{padding:120px 0}
+.hd{display:grid;grid-template-columns:260px 1fr;gap:40px;margin-bottom:56px}
+.hd .k{font-family:Montserrat,sans-serif;font-weight:700;color:var(--ac);font-size:14px;letter-spacing:.18em;padding-top:12px}
+.hd h2{font-size:clamp(30px,3.6vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.25}
+.hd p{color:var(--g4);margin-top:12px;font-size:17px}
+
+/* ===== 3. reasons : numbered horizontal cards ===== */
+.why{background:var(--g1)}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.cards .c{background:#fff;padding:32px 26px 30px;border-radius:10px;display:flex;flex-direction:column;min-height:300px}
+.cards .c .n{font-family:Montserrat,sans-serif;font-weight:800;font-size:15px;color:var(--ac)}
+.cards .c h3{font-size:21px;margin:auto 0 10px;letter-spacing:-.02em;line-height:1.35}
+.cards .c p{font-size:14.5px;color:var(--g4)}
+.cards .c.dark{background:var(--bk);color:#fff}
+.cards .c.dark p{color:#aab}
+
+/* ===== 4. structure flow ===== */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1.2fr;align-items:stretch;gap:0}
+.flow .f{border:1px solid var(--g2);border-radius:10px;padding:30px 26px}
+.flow .f small{color:var(--g3);font-size:13px;font-weight:600}
+.flow .f h4{font-size:20px;margin:8px 0 6px}
+.flow .f p{font-size:14.5px;color:var(--g4)}
+.flow .op{display:flex;align-items:center;justify-content:center;width:46px;font-size:26px;color:var(--g3);font-weight:300}
+.flow .f.res{background:var(--ac);border-color:var(--ac);color:#fff}
+.flow .f.res small,.flow .f.res p{color:#dbe3ff}
+.flow-img{margin-top:40px;border-radius:10px;overflow:hidden;cursor:zoom-in;border:1px solid var(--g2)}
+
+/* ===== 5. explorer : vertical tabs + viewer ===== */
+.exp{background:var(--bk);color:#fff}
+.exp .hd p{color:#9aa3b5}
+.exp-wrap{display:grid;grid-template-columns:260px 1fr;gap:40px}.exp-wrap>*{min-width:0}
+.vt{display:flex;flex-direction:column;border-top:1px solid #2a2e38}
+.vt button{background:none;border:0;border-bottom:1px solid #2a2e38;color:#8b93a7;font:inherit;text-align:left;padding:20px 0;font-size:18px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.vt button i{font-style:normal;font-family:Montserrat,sans-serif;font-size:13px}
+.vt button.on{color:#fff}
+.vt button.on i{color:var(--ac)}
+.vt-desc{margin-top:24px;color:#9aa3b5;font-size:15px;min-height:70px}
+.viewer{position:relative;background:#1a1d24;border-radius:10px;overflow:hidden;aspect-ratio:16/9}
+.viewer img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .5s;cursor:zoom-in}
+.viewer img.on{opacity:1}
+.viewer img.cover{object-fit:cover}
+.viewer img.light{background:#fff}
+
+/* ===== 6. type compare table + plan ===== */
+.types{width:100%;border-collapse:collapse;margin-bottom:60px;font-size:16px}
+.types th,.types td{padding:18px 16px;text-align:center;border-bottom:1px solid var(--g2)}
+.types thead th{background:var(--bk);color:#fff;font-weight:600;font-size:15px}
+.types thead th:first-child{text-align:left}
+.types tbody th{text-align:left;color:var(--g4);font-weight:500;background:var(--g1);width:200px}
+.types td.hl{background:var(--ac2);font-weight:700;color:var(--ac)}
+.types .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.plan{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.plan .p{border:1px solid var(--g2);border-radius:10px;overflow:hidden}
+.plan .p .top{display:flex;justify-content:space-between;align-items:center;padding:18px 22px;border-bottom:1px solid var(--g2)}
+.plan .p .top b{font-family:Montserrat,sans-serif;font-size:24px;font-weight:800}
+.plan .p .tg{display:flex;background:var(--g1);border-radius:6px;padding:3px}
+.plan .p .tg button{border:0;background:none;font:inherit;font-size:13px;font-weight:600;padding:7px 14px;border-radius:4px;cursor:pointer;color:var(--g4)}
+.plan .p .tg button.on{background:#fff;color:var(--bk);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.plan .p img{width:100%;aspect-ratio:3/2;object-fit:contain;background:#fff;cursor:zoom-in}
+
+/* ===== 7. interior mosaic ===== */
+.mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(5,150px) 280px;gap:8px;grid-template-areas:"a a a a b b" "a a a a b b" "a a a a c c" "d e f f c c" "d e f f c c" "g g g h h h"}
+.mosaic figure{position:relative;overflow:hidden;cursor:zoom-in;border-radius:6px}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.mosaic figure:hover img{transform:scale(1.05)}
+.mosaic figcaption{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.92);font-size:13px;font-weight:700;padding:4px 10px;border-radius:4px}
+.m1{grid-area:a}.m2{grid-area:b}.m4{grid-area:c}.m5{grid-area:d}.m6{grid-area:e}.m3{grid-area:f}.m7{grid-area:g}.m8{grid-area:h}
+
+/* ===== 8. FAQ ===== */
+.faq{background:var(--g1)}
+.qa{max-width:900px}
+.qa details{background:#fff;border-radius:10px;margin-bottom:10px;padding:0 28px}
+.qa summary{list-style:none;cursor:pointer;padding:24px 0;font-size:18px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:after{content:"+";font-size:26px;font-weight:300;color:var(--ac);transition:.2s}
+.qa details[open] summary:after{transform:rotate(45deg)}
+.qa details p{padding:0 0 24px;color:var(--g4);font-size:16px}
+.qa summary b{color:var(--ac);margin-right:12px;font-family:Montserrat,sans-serif}
+
+/* ===== 9. contact + map ===== */
+.contact{display:grid;grid-template-columns:1fr 1.3fr;min-height:560px}
+.contact .l{background:var(--ac);color:#fff;padding:80px 64px;display:flex;flex-direction:column;justify-content:space-between}
+.contact .l small{font-family:Montserrat,sans-serif;letter-spacing:.2em;font-weight:700;opacity:.8}
+.contact .l .tel{font-family:Montserrat,sans-serif;font-size:clamp(44px,5vw,72px);font-weight:800;line-height:1;margin:18px 0 10px;display:block}
+.contact .l p{opacity:.85}
+.contact .addr{margin-top:40px;border-top:1px solid rgba(255,255,255,.3);padding-top:28px;display:grid;gap:22px}
+.contact .addr h4{font-size:17px;margin-bottom:4px}
+.contact .addr p{font-size:15px}
+.contact .addr a{font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.contact iframe{width:100%;height:100%;border:0;min-height:560px;filter:grayscale(.3)}
+
+footer{background:var(--bk);color:#7d8596;font-size:13.5px;padding:40px 0 110px}
+footer .box{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer p{margin:2px 0}
+
+/* mobile bottom bar */
+.mbar{display:none}
+
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb.on{display:flex}.lb img{max-width:96vw;max-height:92vh;object-fit:contain;background:#fff}
+
+.up{opacity:0;transform:translateY(20px);transition:.8s}
+.up.in{opacity:1;transform:none}
+
+@media(max-width:1100px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .cards .c{min-height:220px}
+  .flow{grid-template-columns:1fr;gap:10px}
+  .flow .op{width:auto;height:30px}
+}
+@media(max-width:900px){
+  .rail{display:none}
+  main{margin-left:0}
+  .mtop{display:flex;position:sticky;top:0;z-index:60;background:var(--bk);height:60px;align-items:center;justify-content:space-between;padding:0 18px}
+  .mtop img{height:30px;filter:brightness(0) invert(1)}
+  .mtop a.t{color:#fff;font-weight:700;font-family:Montserrat,sans-serif}
+  .box{padding:0 20px}
+  .hero{height:auto;min-height:0}
+  .hero img.bg{position:relative;height:56vh}
+  .hero .title-big{left:20px;top:24px}
+  .hero .card{position:relative;right:auto;bottom:auto;width:100%;padding:30px 22px}
+  .hero .card h1{font-size:32px}
+  .nums{grid-template-columns:1fr 1fr}
+  .nums div{padding:30px 20px;border-bottom:1px solid var(--g2)}
+  .nums b{font-size:40px}
+  .sec{padding:80px 0}
+  .hd{grid-template-columns:1fr;gap:6px;margin-bottom:36px}
+  .cards{grid-template-columns:1fr}
+  .exp-wrap{grid-template-columns:1fr}
+  .vt{flex-direction:row;overflow-x:auto;border:0;gap:8px}
+  .vt button{border:1px solid #2a2e38;border-radius:30px;padding:10px 16px;font-size:14px;white-space:nowrap}
+  .vt button i{display:none}
+  .vt-desc{min-height:0}
+  .viewer{aspect-ratio:4/3}
+  .types{font-size:13px}.types th,.types td{padding:12px 6px}.types tbody th{width:auto}
+  .plan{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:150px;grid-template-areas:"a a" "a a" "b c" "b c" "d e" "d e" "f f" "g g" "h h"}
+  .contact{grid-template-columns:1fr}
+  .contact .l{padding:56px 22px}
+  .contact iframe{min-height:360px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;height:58px;border-radius:12px;background:var(--ac);color:#fff;align-items:center;justify-content:center;font-weight:800;font-size:18px;box-shadow:0 10px 30px rgba(47,84,235,.4)}
+}
+</style>
+</head>
+<body>
+
+<!-- desktop rail -->
+<aside class="rail">
+  <a href="#top" class="mark"><img src="img/logo.png" alt="센트릭 사당"></a>
+  <ul id="railnav">
+    <li><a href="#why">왜 센트릭인가</a></li>
+    <li><a href="#structure">사업구조</a></li>
+    <li><a href="#explore">단지</a></li>
+    <li><a href="#types">평형</a></li>
+    <li><a href="#interior">인테리어</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">오시는길</a></li>
+  </ul>
+  <a class="tel" href="tel:1555-1341">1555-1341</a>
+</aside>
+
+<div class="mtop"><img src="img/logo.png" alt="센트릭 사당"><a class="t" href="tel:1555-1341">☎ 1555-1341</a></div>
+
+<main>
+
+<!-- 1 HERO -->
+<section class="hero" id="top">
+  <img class="bg" src="img/site.jpg" alt="센트릭 사당 단지 조감">
+  <div class="title-big">CENTRIC<span>SADANG</span></div>
+  <div class="card">
+    <small>서울 동작구 사당5동 · 502세대</small>
+    <h1>사당 중심에 세우는<br>6개동 502세대</h1>
+    <p>서울시·공공기관 협의로 추진하는 지역주택조합 단지. 교통·교육·자연의 가치를 한 곳에 담았습니다.</p>
+    <div class="row">
+      <a class="btn a" href="tel:1555-1341">☎ 1555-1341 상담</a>
+      <a class="btn b" href="#types">평형 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2 NUMBERS -->
+<div class="nums">
+  <div><b class="num">502<em>세대</em></b><span>총 세대수</span></div>
+  <div><b class="num">6<em>개동</em></b><span>단지 규모</span></div>
+  <div><b class="num">29<em>F</em></b><span>최고 층수</span></div>
+  <div><b class="num">34.6<em>%</em></b><span>국공유지 비율</span></div>
+</div>
+
+<!-- 3 WHY -->
+<section class="sec why" id="why">
+  <div class="box">
+    <div class="hd up"><div class="k">01 WHY</div><div><h2>센트릭 사당을 봐야 하는<br>다섯 가지 이유</h2></div></div>
+    <div class="cards">
+      <div class="c up"><span class="n num">01</span><h3>공공협의<br>기반사업</h3><p>서울시·동작구 관계기관 협의 절차를 거치며 추진합니다.</p></div>
+      <div class="c up"><span class="n num">02</span><h3>국공유지<br>34.6%</h3><p>공공성이 만든 안정적인 사업 기반으로 토지 리스크를 줄였습니다.</p></div>
+      <div class="c up"><span class="n num">03</span><h3>검증된<br>전문가 그룹</h3><p>업무대행 CH도시개발, 건축설계 코리아 E&amp;C그룹이 함께합니다.</p></div>
+      <div class="c up"><span class="n num">04</span><h3>사당 생활권<br>입지</h3><p>사당 생활권의 교통·상권·교육 인프라를 함께 누립니다.</p></div>
+      <div class="c dark up"><span class="n num">05</span><h3>단지 안<br>커뮤니티</h3><p>작은도서관·어린이집·경로당·주민체육시설·어린이놀이터를 갖춥니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 STRUCTURE -->
+<section class="sec" id="structure">
+  <div class="box">
+    <div class="hd up"><div class="k">02 STRUCTURE</div><div><h2>사업은 이렇게 움직입니다</h2><p>공공의 신뢰, 시행 경험, 설계 역량이 하나로 모입니다.</p></div></div>
+    <div class="flow up">
+      <div class="f"><small>PUBLIC</small><h4>서울시·공공기관 협의</h4><p>공공성이 만드는 신뢰</p></div>
+      <div class="op">+</div>
+      <div class="f"><small>업무대행</small><h4>CH도시개발(주)</h4><p>검증된 시행·개발 노하우</p></div>
+      <div class="op">+</div>
+      <div class="f"><small>건축설계</small><h4>(주)코리아 E&amp;C그룹</h4><p>설계·인허가 전문 역량</p></div>
+      <div class="op">=</div>
+      <div class="f res"><small>RESULT</small><h4>센트릭 사당</h4><p>사당5동지역주택조합 추진위원회</p></div>
+    </div>
+    <div class="flow-img up"><img src="img/public.jpg" alt="공공협의 기반사업 및 전문가 그룹" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- 5 EXPLORER -->
+<section class="sec exp" id="explore">
+  <div class="box">
+    <div class="hd up"><div class="k">03 EXPLORE</div><div><h2>단지 둘러보기</h2><p>왼쪽 메뉴를 눌러 단지 곳곳을 살펴보세요.</p></div></div>
+    <div class="exp-wrap">
+      <div>
+        <div class="vt" id="vt">
+          <button class="on" data-i="0">조감도 <i>01</i></button>
+          <button data-i="1">단지배치도 <i>02</i></button>
+          <button data-i="2">동호배치도 <i>03</i></button>
+          <button data-i="3">단지 입구 <i>04</i></button>
+          <button data-i="4">어린이놀이터 <i>05</i></button>
+        </div>
+        <p class="vt-desc" id="vtd">6개동 최고 29층 규모의 센트릭 사당 조감도입니다.</p>
+      </div>
+      <div class="viewer" id="viewer">
+        <img class="on cover" src="img/hero.jpg" alt="조감도" style="object-position:center 25%">
+        <img class="cover" src="img/site.jpg" alt="단지배치도" loading="lazy">
+        <img class="light" src="img/dongho.jpg" alt="동호배치도" loading="lazy">
+        <img class="cover" src="img/gate.jpg" alt="단지 입구" loading="lazy">
+        <img class="cover" src="img/play.jpg" alt="어린이놀이터" loading="lazy">
+      </div>
+    </div>
+    <p style="color:#6b7385;font-size:13px;margin-top:16px">※ 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다. 이미지를 누르면 크게 볼 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- 6 TYPES -->
+<section class="sec" id="types">
+  <div class="box">
+    <div class="hd up"><div class="k">04 UNIT TYPE</div><div><h2>평형 한눈에 비교</h2><p>전용 59㎡ 2개 타입, 84㎡ 2개 타입으로 구성됩니다.</p></div></div>
+    <div class="up" style="overflow-x:auto">
+    <table class="types">
+      <thead><tr><th>구분</th><th>59㎡ A</th><th>59㎡ B</th><th>84㎡ A</th><th>84㎡ B</th></tr></thead>
+      <tbody>
+        <tr><th>세대수</th><td><span class="dot" style="background:#f08a5d"></span>24</td><td><span class="dot" style="background:#e8c547"></span>164</td><td class="hl"><span class="dot" style="background:#3d8fdc"></span>287</td><td><span class="dot" style="background:#9fd3ea"></span>27</td></tr>
+        <tr><th>전용면적</th><td colspan="2" rowspan="4" style="color:#6b7385">전화 상담 시 안내<br><a href="tel:1555-1341" style="color:var(--ac);font-weight:700">1555-1341</a></td><td>84.73㎡</td><td>84.94㎡</td></tr>
+        <tr><th>공급면적</th><td>114.51㎡ (34.64py)</td><td>115.13㎡ (34.83py)</td></tr>
+        <tr><th>계약면적</th><td>188.76㎡ (57.10py)</td><td>189.56㎡ (57.34py)</td></tr>
+        <tr><th>서비스면적</th><td>25.44㎡ (7.70py)</td><td>25.44㎡ (7.70py)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="plan">
+      <div class="p up">
+        <div class="top"><b>84A</b><div class="tg"><button class="on" data-s="img/b1_07.jpg">3D</button><button data-s="img/b1_08.jpg">평면</button><button data-s="img/b1_09.jpg">배치</button></div></div>
+        <img src="img/b1_07.jpg" alt="84A 평면" loading="lazy">
+      </div>
+      <div class="p up">
+        <div class="top"><b>84B</b><div class="tg"><button class="on" data-s="img/b1_10.jpg">3D</button><button data-s="img/b1_11.jpg">평면</button><button data-s="img/b1_12.jpg">배치</button></div></div>
+        <img src="img/b1_10.jpg" alt="84B 평면" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 INTERIOR -->
+<section class="sec" id="interior" style="padding-top:0">
+  <div class="box">
+    <div class="hd up"><div class="k">05 INTERIOR</div><div><h2>84㎡ 인테리어</h2></div></div>
+    <div class="mosaic up">
+      <figure class="m1"><img src="img/in_1.jpg" alt="거실" loading="lazy"><figcaption>거실</figcaption></figure>
+      <figure class="m2"><img src="img/in_3.jpg" alt="안방" loading="lazy"><figcaption>안방</figcaption></figure>
+      <figure class="m4"><img src="img/kitchen_bg.jpg" alt="LDK" loading="lazy"><figcaption>LDK</figcaption></figure>
+      <figure class="m5"><img src="img/in_5.jpg" alt="현관" loading="lazy"><figcaption>현관</figcaption></figure>
+      <figure class="m6"><img src="img/in_6.jpg" alt="펜트리" loading="lazy"><figcaption>펜트리</figcaption></figure>
+      <figure class="m3"><img src="img/in_7.jpg" alt="욕실" loading="lazy"><figcaption>욕실</figcaption></figure>
+      <figure class="m7"><img src="img/in_2.jpg" alt="주방" loading="lazy"><figcaption>주방</figcaption></figure>
+      <figure class="m8"><img src="img/in_4.jpg" alt="드레스룸" loading="lazy"><figcaption>드레스룸</figcaption></figure>
+    </div>
+    <p style="color:var(--g3);font-size:13px;margin-top:14px">※ 인테리어 이미지는 실제 시공과 다를 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- 8 FAQ -->
+<section class="sec faq" id="faq">
+  <div class="box">
+    <div class="hd up"><div class="k">06 FAQ</div><div><h2>자주 묻는 질문</h2></div></div>
+    <div class="qa up">
+      <details open><summary><span><b>Q</b>센트릭 사당은 어디에 들어서나요?</span></summary><p>서울특별시 동작구 사당5동 일원에 6개동, 최고 29층, 총 502세대 규모로 계획되어 있습니다.</p></details>
+      <details><summary><span><b>Q</b>어떤 평형이 있나요?</span></summary><p>전용 59㎡ A(24세대)·B(164세대), 84㎡ A(287세대)·B(27세대) 네 가지 타입으로 구성됩니다.</p></details>
+      <details><summary><span><b>Q</b>사업은 누가 추진하나요?</span></summary><p>사당5동지역주택조합 추진위원회가 시행하며, 업무대행은 CH도시개발(주), 건축설계는 (주)코리아 E&amp;C그룹이 맡고 있습니다.</p></details>
+      <details><summary><span><b>Q</b>홍보관은 어디에 있나요?</span></summary><p>서울특별시 서초구 서초대로41길 15, 지하철 2호선 서초역 7번 출구에서 약 100m 거리입니다.</p></details>
+      <details><summary><span><b>Q</b>상담은 어떻게 받나요?</span></summary><p>대표번호 <a href="tel:1555-1341" style="color:var(--ac);font-weight:700">1555-1341</a>로 전화 주시면 친절하게 안내해 드립니다.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9 CONTACT -->
+<section class="contact" id="contact">
+  <div class="l">
+    <div>
+      <small>CONTACT</small>
+      <a class="tel" href="tel:1555-1341">1555-1341</a>
+      <p>센트릭 사당 분양 상담 대표번호</p>
+    </div>
+    <div class="addr">
+      <div><h4>센트릭 사당 홍보관</h4><p>서울특별시 서초구 서초대로41길 15<br>2호선 서초역 7번 출구 약 100m</p><a href="https://map.naver.com/p/search/서울특별시 서초구 서초대로41길 15" target="_blank" rel="noopener">네이버 지도에서 열기</a></div>
+      <div><h4>조합 사무실</h4><p>서울특별시 동작구 사당로 172, 2층</p></div>
+    </div>
+  </div>
+  <iframe src="https://maps.google.com/maps?q=서울특별시%20서초구%20서초대로41길%2015&z=16&output=embed" loading="lazy" title="홍보관 위치 지도"></iframe>
+</section>
+
+<footer>
+  <div class="box">
+    <div>
+      <p>사당5동지역주택조합 추진위원회 (시행사) | 추진위원장: 차승훈</p>
+      <p>조합사무실: 서울특별시 동작구 사당로 172, 2층 | 홍보관: 서울특별시 서초구 서초대로41길 15</p>
+      <p style="margin-top:10px;font-size:12px">※ 본 홈페이지의 이미지 및 내용은 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있으며, 인허가 과정에서 변경될 수 있습니다.</p>
+    </div>
+    <p>Copyright © 센트릭 사당. All Rights Reserved.</p>
+  </div>
+</footer>
+</main>
+
+<a class="mbar" href="tel:1555-1341">☎ 분양상담 1555-1341</a>
+<div class="lb" id="lb" onclick="this.classList.remove('on')"><img id="lbi" alt=""></div>
+
+<script>
+var descs=['6개동 최고 29층 규모의 센트릭 사당 조감도입니다.','6개동이 중앙 광장을 둘러싸는 단지배치도입니다.','동·호수별 타입 구성을 보여주는 동호배치도입니다.','센트릭 사당 단지 주출입구 투시도입니다.','단지 안 어린이놀이터 투시도입니다.'];
+var vt=document.querySelectorAll('#vt button'),vi=document.querySelectorAll('#viewer img');
+vt.forEach(function(b){b.onclick=function(){var i=+b.dataset.i;vt.forEach(function(x){x.classList.remove('on')});vi.forEach(function(x){x.classList.remove('on')});b.classList.add('on');vi[i].classList.add('on');document.getElementById('vtd').textContent=descs[i]}});
+document.querySelectorAll('.plan .p').forEach(function(p){var im=p.querySelector('img');p.querySelectorAll('.tg button').forEach(function(b){b.onclick=function(){p.querySelectorAll('.tg button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');im.src=b.dataset.s}})});
+function zoom(s){document.getElementById('lbi').src=s;document.getElementById('lb').classList.add('on')}
+document.getElementById('viewer').onclick=function(){var o=document.querySelector('#viewer img.on');zoom(o.src)};
+document.querySelectorAll('.plan img,.mosaic img,.flow-img img').forEach(function(i){i.addEventListener('click',function(){zoom(i.src)})});
+var links=document.querySelectorAll('#railnav a');
+function act(){var y=scrollY+200,cur=null;links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s&&s.offsetTop<=y)cur=a});links.forEach(function(a){a.classList.toggle('on',a===cur)})}
+addEventListener('scroll',act);act();
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.up').forEach(function(el){io.observe(el)})}else{document.querySelectorAll('.up').forEach(function(el){el.classList.add('in')})}
+</script>
+<script>(function(){try{var u=new URLSearchParams(location.search);var d=JSON.stringify({site:'kr',path:location.pathname,ref:document.referrer,utm:u.get('utm_source')||u.get('n_media')||''});var url='https://centricsadangapt.com/api/track';if(navigator.sendBeacon){navigator.sendBeacon(url,new Blob([d],{type:'text/plain'}))}else{fetch(url,{method:'POST',body:d,keepalive:true})}}catch(e){}})();</script>
+</body>
+</html>
