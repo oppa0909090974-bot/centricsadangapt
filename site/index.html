@@ -170,19 +170,11 @@ var g5_shop_url = "G5_SHOP_URL";
         </div>
     </div>
 
-    <div id="hd_pops_2" class="hd_pops" style="display: none;">
-        <div class="hd_pops_con">
-            <a href="e1.html" class="pop-gift"><picture><source media="(max-width:768px)" srcset="m/gift_banner_m.jpg"><img src="m/gift_banner.jpg" alt="사당 새 아파트 84㎡ 마지막 9억대 · 방문 상담 고객 전원 사은품 증정 · 분양문의 1844-2411"></picture></a>        </div>
-        <div class="hd_pops_footer">
-            <button class="hd_pops_reject hd_pops_2 24"><strong>24</strong>시간 동안 다시 열람하지 않습니다.</button>
-            <button class="hd_pops_close hd_pops_2">닫기 <i class="fa fa-times" aria-hidden="true"></i></button>
-        </div>
-    </div>
+    
 </div>
 
 <script>
 $(function() {
-    try{ if(!(Date.now() < +localStorage.getItem('hide_pop2'))) $('#hd_pops_2').show(); }catch(e){ $('#hd_pops_2').show(); }
     $(".hd_pops_reject").click(function() {
         var id = $(this).attr('class').split(' ');
         $("#"+id[1]).css("display", "none");
