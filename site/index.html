@@ -64,7 +64,7 @@ var g5_shop_url = "G5_SHOP_URL";
 .hero-tel small{font-size:20px;font-weight:700}
 @media (max-width:1024px){.hero-tel{font-size:26px;padding:12px 26px;margin-top:18px}.hero-tel small{font-size:15px}}
 </style>
-<style>.pop-gift,.pop-gift img{display:block;width:100%;height:auto}@media(max-width:768px){#hd_pops_2{width:min(420px,92vw)!important}}</style>
+<style>.pop-gift,.pop-gift img{display:block;width:100%;height:auto}@media(max-width:768px){#hd_pops_2{width:min(420px,92vw)!important;top:50%!important}}</style>
 <style>
 #hd .top-call2{width:auto!important;flex-shrink:0;margin-right:24px}
 #hd .top-call2 a{display:flex!important;align-items:center;gap:12px;background:#fff!important;color:#142b55!important;border:2px solid #d6b25e;border-radius:40px!important;padding:6px 22px 6px 6px!important;font-size:24px!important;font-weight:900!important;letter-spacing:.5px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.18)!important;animation:none!important;line-height:1.1}
@@ -148,7 +148,7 @@ var g5_shop_url = "G5_SHOP_URL";
     
 <!-- 팝업레이어 시작 { -->
 <style>
-#hd_pops_2{position:fixed!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%);width:min(1200px,94vw);z-index:100000;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+#hd_pops_2{position:fixed!important;top:calc(50% - 40px)!important;left:50%!important;transform:translate(-50%,-50%);width:min(1000px,92vw,calc((100vh - 320px) * 2));z-index:100000;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.4)}
 #hd_pops_2 .hd_pops_con{width:100%!important;height:auto!important}
 #hd_pops_2 .hd_pops_con p{margin:0}
 #hd_pops_2 .hd_pops_con img{display:block;width:100%;height:auto}
