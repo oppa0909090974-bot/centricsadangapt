@@ -130,6 +130,34 @@ var g5_shop_url = "G5_SHOP_URL";
 #hd .top-call2 .tc-reg svg{width:24px;height:24px}
 @media(max-width:1024px){#hd .top-call2 .tc-reg{display:none!important}}
 </style>
+<style>
+.heroB .b-in{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding-top:100px;padding-bottom:20px;box-sizing:border-box}
+.heroB .e-loc{display:inline-flex;align-items:center;gap:12px;color:#fff;font-size:20px;border-left:3px solid #d9b26a;padding:2px 0 2px 14px}
+.heroB .e-loc b{color:#ffd56a}.heroB .e-loc i{width:1px;height:16px;background:rgba(255,255,255,.4)}
+.heroB .e-ln{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#747F00;font-size:14px;font-weight:900}
+.heroB .e-h{margin:26px 0 0;line-height:1}
+.heroB .e-last{display:inline-block;font-size:34px;font-weight:800;color:#13234d;background:#ffd56a;padding:6px 18px 8px;border-radius:6px;letter-spacing:-1px}
+.heroB .e-price{display:block;margin-top:14px;font-size:124px;font-weight:900;letter-spacing:-6px;color:#fff;line-height:1}
+.heroB .e-price em{font-style:normal;color:#ffd56a;font-size:1.18em;margin-right:4px}
+.heroB .e-offer{display:flex;gap:14px;margin-top:34px}
+.heroB .e-card{min-width:220px;border:1.5px solid rgba(217,178,106,.7);background:rgba(10,22,52,.55);backdrop-filter:blur(4px);border-radius:14px;padding:16px 26px}
+.heroB .e-card small{display:block;font-size:15px;color:#cfd6e4;font-weight:600}
+.heroB .e-card b{display:block;white-space:nowrap;font-size:40px;font-weight:900;color:#fff;letter-spacing:-1px;margin-top:2px}
+.heroB .e-card.hl{background:linear-gradient(180deg,#e3242b,#b3121a);border-color:#ff8a8a;box-shadow:0 12px 28px rgba(179,18,26,.4)}
+.heroB .e-card.hl small{color:#ffe1e1}
+.heroB .e-sub{margin:24px 0 0;font-size:19px;color:#cfd6e4}
+.heroB .e-sub b{color:#fff}
+@media(max-height:860px) and (min-width:1025px){.heroB .e-price{font-size:104px}.heroB .e-offer{margin-top:24px}}
+@media(max-width:1024px){
+ .heroB .e-loc{font-size:15px;gap:8px}.heroB .e-ln{width:22px;height:22px;font-size:12px}
+ .heroB .e-h{margin-top:18px}
+ .heroB .e-last{font-size:22px;padding:4px 12px 6px}
+ .heroB .e-price{font-size:clamp(58px,18vw,76px);letter-spacing:-4px;margin-top:10px}
+ .heroB .e-offer{gap:10px;margin-top:22px;align-self:stretch}
+ .heroB .e-card{min-width:0;flex:1;padding:12px 14px}.heroB .e-card small{font-size:12px}.heroB .e-card b{font-size:26px}
+ .heroB .e-sub{font-size:15px;margin-top:16px}
+}
+</style>
 </head>
 <body data-aos-easing="ease-out" data-aos-duration="800" data-aos-delay="0" class="fp-scrollable fp-viewing-10" style="height: initial; position: relative; overflow: visible;">
 
@@ -410,9 +438,13 @@ $(window).on('scroll', function () {
 		<div class="b-bg"></div><div class="b-shade"></div>
 		<div class="b-in">
 			<p class="b-eye">CENTRIC SADANG · 사당 502세대</p>
-			<h1 class="b-h">사당 84㎡,<br><em>9억대</em>는 지금이 마지막</h1>
-			<p class="b-sub">자세한 조건은 <b>전화로 바로 안내해 드립니다.</b></p>
-			<ul class="b-pts"><li><b>7호선 남성역</b>도보 3분</li><li><b>강남생활권</b>10분대 진입</li><li><b>트리플 숲세권</b>까치산·현충원·삼일공원</li></ul>
+			<div class="e-loc"><span class="e-ln">7</span><b>남성역 3분</b><i></i>7호선 초역세권</div>
+			<h1 class="e-h"><span class="e-last">마지막</span><span class="e-price"><em>9</em>억대로!</span></h1>
+			<div class="e-offer">
+				<div class="e-card"><small>주택형</small><b>84㎡</b></div>
+				<div class="e-card hl"><small>계약금</small><b>1천만원</b></div>
+			</div>
+			<p class="e-sub">자세한 조건은 <b>전화로 바로 안내</b>해 드립니다.</p>
 		</div>
 		<div class="b-bar">
 			<div class="b-bar-l"><span class="b-dot"></span><b>분양 상담</b><span>분양가 · 잔여 동호수 · 계약 조건 안내</span></div>
