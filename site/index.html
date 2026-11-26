@@ -87,8 +87,9 @@ var g5_shop_url = "G5_SHOP_URL";
 <style>.biz-info{display:block!important;margin-top:4px}</style>
 <style>
 #main_slider.heroB{position:relative;height:100vh;min-height:720px;overflow:hidden;background:#0a1630}
-.heroB .b-bg{position:absolute;inset:0;background:url(m/hero_main.jpg) 70% 30%/cover no-repeat}
-.heroB .b-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,14,34,.95) 0%,rgba(6,14,34,.8) 42%,rgba(6,14,34,.1) 75%)}
+#main_slider.heroB{background:linear-gradient(180deg,#0b1938 0%,#13284f 60%,#1b3560 100%)}
+.heroB .b-bg{position:absolute;inset:0;background:url(m/hero_train.jpg) 70% center/cover no-repeat}
+.heroB .b-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,16,38,.88) 0%,rgba(8,16,38,.72) 30%,rgba(8,16,38,.25) 52%,rgba(8,16,38,0) 66%)}
 .heroB .b-in{position:relative;z-index:2;max-width:1320px;margin:0 auto;padding:170px 40px 0;color:#fff}
 .heroB .b-eye{font-size:16px;letter-spacing:.25em;color:#d9b26a;font-weight:700;margin:0 0 18px}
 .heroB .b-h{font-size:74px;line-height:1.18;font-weight:900;letter-spacing:-3px;margin:0}
@@ -108,13 +109,15 @@ var g5_shop_url = "G5_SHOP_URL";
 .heroB .b-reg{display:inline-flex;align-items:center;height:68px;padding:0 26px;border-radius:12px;background:#142b55;color:#fff!important;font-size:18px;font-weight:800;text-decoration:none}
 @media(max-width:1024px){
  #main_slider.heroB{height:auto!important;min-height:100vh}
- .heroB .b-shade{background:linear-gradient(180deg,rgba(6,14,34,.6) 0%,rgba(6,14,34,.9) 50%,rgba(6,14,34,.97) 100%)}
+ #main_slider.heroB{display:flex!important;flex-direction:column;padding-bottom:58px;box-sizing:border-box}
+ .heroB .b-bg{order:2;position:relative;inset:auto;width:100%;flex:1;min-height:300px;height:auto;margin-top:-10px;background-position:72% center;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 28%);mask-image:linear-gradient(180deg,transparent 0%,#000 28%)}
+ .heroB .b-shade{display:none}
  .heroB .b-in{padding:104px 20px 0}
  .heroB .b-eye{font-size:12px;margin-bottom:12px}
  .heroB .b-h{font-size:clamp(30px,8.8vw,38px);letter-spacing:-2px;white-space:nowrap}
  .heroB .b-h em{border-bottom-width:4px}
  .heroB .b-sub{font-size:16px;margin:18px 0 22px}
- .heroB .b-in{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:84px 20px 96px;box-sizing:border-box}
+ .heroB .b-in{order:1;min-height:0;height:auto!important;display:flex;flex-direction:column;justify-content:flex-start;padding:92px 20px 0;box-sizing:border-box}
  .heroB .b-pts{gap:8px}.heroB .b-pts li{min-width:0;flex:1 1 45%;padding:10px 12px;font-size:12.5px}.heroB .b-pts b{font-size:15px}
  .heroB .b-bar{display:none}
  .heroB .b-bar-l{flex:1 1 100%;flex-wrap:wrap;gap:6px 10px;font-size:13px}.heroB .b-bar-l b{font-size:16px}
